@@ -1,0 +1,52 @@
+body{
+	margin: 0px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 120%;
+	background-attachment: fixed;
+	text-align: center;
+	background-image: url(http://cursiveq.com/wp-content/uploads/2013/01/cq_product_blurry_circles_bg-590x400.jpg);
+}
+
+header h1{
+	padding: 0px 0px 20px 0px;
+	margin:0px;
+}
+
+header {
+	width:100%;
+	height: 150px;
+	color: white;
+	text-align: center;
+	font-family: "lobster",cursive;
+	font-size: 70px;
+}
+
+.tile {
+	display: inline-block;
+	background-color: #F7F2F2;
+	border: 1px solid gray;
+	color: #2e2322;
+	overflow: hidden;
+	width: 250px;
+	height: 500px;
+	margin-right: 2px;
+	margin-left: 2px;
+	
+	margin-top: 35px;
+}
+
+/*<!-- Tile hover feature -->*/
+.columns: hover.pin:not(:hover) {
+opacity: 0.4;
+}
+
+img {
+  height: 400px;
+  width: 225px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 2px 0px 2px 0px;
+}
+
+

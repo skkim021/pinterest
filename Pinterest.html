@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<!-- //Allows Angular run on// -->
+<html ng-app="pinApp">
+<head>
+	<title>Pinit</title>
+<!-- Google Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+<!-- //Links that download Angular, Javascript, CSS// -->
+	<link type="text/css" rel="stylesheet" href="Pinterest.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+	<script type="text/javascript" src="Pinterest.js"></script>
+</head>
+
+<!-- //links controller in JS// -->
+<body ng-controller="pinController">
+	
+	<header>
+		<h1>PinIt</h1>
+	</header>
+
+<!-- Search box -->
+	<div id= "searchBox">
+		<input type="text" size="50" placeholder="Search through cards" ng-model="searchText"/>
+	</div>
+
+<!-- //links angluar action to JS. Also, the tile clss in CSS//	 -->
+	<div class="tile" ng-repeat="pin in pins">
+<!-- //Different attributes for one pin// -->
+		<div class="pinPicture"><img src={{pin.Picture}}></div>
+		<div class="pinLink">{{pin.Link}}</div>
+		<div class="pinDescription">{{pin.Description}}</div>
+	</div>
+
+</body>
+</html>
