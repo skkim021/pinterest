@@ -10,9 +10,14 @@ var sync = $firebase(ref);
 
 // function that links information in html to firebase //
 
-$scope.movies = sync.$asArray();
-	$scope.addPin = function(picture, website, description){
-    $scope.pins.$add({picture: picture, website: website, description: description})
+$scope.pins = sync.$asArray();
+
+$scope.addPins = function(){
+    $scope.pins.$add({
+    	picture: $scope.newPinPicture, 
+    	website: $scope.newPinWebsite, 
+    	description: $scope.newPinDescription
+    })
 
   }
 

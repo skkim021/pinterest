@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- //Allows Angular run on// -->
-<html ng-app="pinApp">
+<html>
 <head>
 	<title>Travelist</title>
   <!-- Google Fonts -->
@@ -18,7 +18,7 @@
   <link type="text/css" rel="stylesheet" href="Pinterest.css"/>
 </head>
 <!-- //links controller in Pinterest.js// -->
-<body ng-controller="pinController">
+<body ng-app="pinApp" ng-controller="pinController" class="ng-scope">
 <!-- ////////////Navigation bar //////////-->
   <div> 
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
@@ -30,14 +30,7 @@
           </div>
         </form> 
       </div>
-    <div>
-      <form ng-submit="addPin(newPinPoster, newPinDescription, newPinWebsite)">
-        <input type="text" ng-model="newPinPoster" size"20" placeholder="Image Site" >
-        <input type="text" ng-model="newPinDescription" size"20" placeholder="Description"  >
-        <input type="text" ng-model="newPinWebsite" size"20" placeholder="Website"  >
-        <button type ="submit">Add to Adventure</button>
-      </form>
-    </div>
+    
 <!-- //////////// Title////////////////// -->
       <ul class="nav navbar-nav navbar-inner">
 				<li class="navbar-title">The Travelist</li>
@@ -59,12 +52,24 @@
   </div>
   <!--/////////End of Navigation bar //////  -->
   <!-- /////// Tile Angular Setup ////////// -->
-    <div class="tile" ng-repeat="pin in pins | filter:searchText">
-    <div class="pinPicture"><img src={{pin.Picture}}></div>
+  <br/>
+      <form ng-submit="addPin(newPinPicture, newPinDescription, newPinWebsite)">
+        <input ng-model="newPinPicture" size"20" placeholder="Image Site">
+        <input ng-model="newPinDescription" size"20" placeholder="Description" >
+        <input ng-model="newPinWebsite" size"20" placeholder="Website">
+        <button type ="submit" ng-click="addPins()">Add to Adventure</button>
+      </form>
+
+<!-- All Pin Content -->
+<div class="content">
+<!-- Tile NG REPEAT/////////////////// -->
+    <div class="tile" ng-repeat="pin in pins | filter:searchText" ng-click="viewDetails()">
+    <div class="pin-picture"><img src="{{pin.picture}}"></div>
     <hr/>
-    <div class="pinLink">{{pin.Link}}</div>
-    <div class="pinDescription">{{pin.Description}}</div>
+    <div class="pin-website">{{pin.website}}</div>
+    <div class="pin-description">{{pin.description}}</div>
     <button ng-click="pins.$remove(pin)">Not Interested</button>
     </div>
+  </div>
 </body>
 </html>
