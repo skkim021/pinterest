@@ -21,12 +21,12 @@ hr{
 	overflow: hidden;
 	width: auto;
 	height: auto;
-	margin: 0 2px 15px;
+	margin:5px 5px;
 	border-radius: 5px;
 	box-shadow: 2px 2px 2px 2px #888888;
 	padding: 3px;
 	padding-bottom: 1px;
-	opacity: 1;
+	/*opacity: 1;*/
 
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
@@ -39,10 +39,10 @@ hr{
 
 img {
   height: auto;
-  width: 225px;
+  width: 210px;
   overflow: hidden;
   border-radius: 10px;
-  margin: 4px 4px 4px 4px;
+  margin: 4px 4px 1px 4px;
 }
 
 /*******************************
@@ -66,28 +66,28 @@ img {
 ********************************/
 
 #wrapper {
-	width: 98%;
+	width: 99%;
 	max-width: 2000px;
 	min-width: 800px;
-	margin: 10px auto;
+	margin: 20px 2px;
 }
 
 #columns {
 	-webkit-column-count: 5;
-	-webkit-column-gap: 10px;
+	-webkit-column-gap: 3px;
 	-webkit-column-fill: auto;
 	-moz-column-count: 5;
-	-moz-column-gap: 10px;
+	-moz-column-gap: 3px;
 	-moz-column-fill: auto;
 	column-count: 5;
-	column-gap: 15px;
+	column-gap: 3px;
 	column-fill: auto;
 }
 
-#columns:hover .tile:not(:hover) {
+/*#columns:hover .tile:not(:hover) {
 	opacity: 0.6;
 }
-
+*/
 
 
 

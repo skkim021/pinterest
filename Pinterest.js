@@ -21,6 +21,7 @@ $scope.addPins = function(){
 
   }
 
+
  
 });
 
