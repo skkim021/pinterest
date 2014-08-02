@@ -21,19 +21,28 @@ hr{
 	overflow: hidden;
 	width: auto;
 	height: auto;
-	margin-right: 10px;
-	margin-left: 5px;
-	margin-top: 10px;
-	border-radius: 10px;
+	margin: 0 2px 15px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px 2px #888888;
+	padding: 3px;
+	padding-bottom: 1px;
+	opacity: 1;
+
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
 }
 
 img {
-  height: 250px;
-  width: auto;
-  max-width: 400px;
+  height: auto;
+  width: 225px;
   overflow: hidden;
   border-radius: 10px;
-  margin: 2px 2px 2px 2px;
+  margin: 4px 4px 4px 4px;
 }
 
 /*******************************
@@ -51,6 +60,34 @@ img {
 	font-family: "lobster",cursive;
 	font-size: 45px;
 }
+
+/******************************
+		column sturcture
+********************************/
+
+#wrapper {
+	width: 98%;
+	max-width: 2000px;
+	min-width: 800px;
+	margin: 10px auto;
+}
+
+#columns {
+	-webkit-column-count: 5;
+	-webkit-column-gap: 10px;
+	-webkit-column-fill: auto;
+	-moz-column-count: 5;
+	-moz-column-gap: 10px;
+	-moz-column-fill: auto;
+	column-count: 5;
+	column-gap: 15px;
+	column-fill: auto;
+}
+
+#columns:hover .tile:not(:hover) {
+	opacity: 0.6;
+}
+
 
 
 

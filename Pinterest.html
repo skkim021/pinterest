@@ -19,22 +19,27 @@
 </head>
 <!-- //links controller in Pinterest.js// -->
 <body ng-app="pinApp" ng-controller="pinController" class="ng-scope">
+<!-- //////////// Title////////////////// -->
+    <div>  
+      <ul class="nav navbar-nav navbar-inner">
+        <li class="navbar-title">The Travelist</li>
+      </ul>  
+    </di>  
 <!-- ////////////Navigation bar //////////-->
   <div> 
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 <!-- ///////Search bar (left side)////// -->
+                
+
       <div class="navbar-header">
+
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
               <input type="text" size="30" class="form-control" ng-model="searchText" placeholder="Where's your next adventure?"/>
           </div>
         </form> 
       </div>
-    
-<!-- //////////// Title////////////////// -->
-      <ul class="nav navbar-nav navbar-inner">
-				<li class="navbar-title">The Travelist</li>
-			</ul>
+
 <!-- //////// Drop down (right side)///// -->
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -51,25 +56,30 @@
     </nav>
   </div>
   <!--/////////End of Navigation bar //////  -->
-  <!-- /////// Tile Angular Setup ////////// -->
-  <br/>
-      <form ng-submit="addPin(newPinPicture, newPinDescription, newPinWebsite)">
-        <input ng-model="newPinPicture" size"20" placeholder="Image Site">
-        <input ng-model="newPinDescription" size"20" placeholder="Description" >
-        <input ng-model="newPinWebsite" size"20" placeholder="Website">
-        <button type ="submit" ng-click="addPins()">Add to Adventure</button>
-      </form>
+ 
+<!-- /////// Tile Angular Setup Front End ////////// -->
+<br/>
+  <form ng-submit="addPin(newPinPicture, newPinDescription, newPinWebsite)">
+    <input ng-model="newPinPicture" size"20" placeholder="Image Site">
+    <input ng-model="newPinDescription" size"20" placeholder="Description" >
+    <input ng-model="newPinWebsite" size"20" placeholder="Website">
+    <button type ="submit" ng-click="addPins()">Add to Adventure</button>
+  </form>  
 
 <!-- All Pin Content -->
 <div class="content">
 <!-- Tile NG REPEAT/////////////////// -->
+  <div id="wrapper">
+    <div id="columns">
     <div class="tile" ng-repeat="pin in pins | filter:searchText" ng-click="viewDetails()">
-    <div class="pin-picture"><img src="{{pin.picture}}"></div>
+      <div class="pin-picture"><img src="{{pin.picture}}"></div>
     <hr/>
     <div class="pin-website">{{pin.website}}</div>
     <div class="pin-description">{{pin.description}}</div>
     <button ng-click="pins.$remove(pin)">Not Interested</button>
     </div>
+    </div>
+  </div>
   </div>
 </body>
 </html>
