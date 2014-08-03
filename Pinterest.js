@@ -16,8 +16,15 @@ $scope.addPins = function(){
     $scope.pins.$add({
     	picture: $scope.newPinPicture, 
     	website: $scope.newPinWebsite, 
-    	description: $scope.newPinDescription
-    })
+    	description: $scope.newPinDescription,
+    	liked: false 
+    });
+
+ 	$scope.newPinPicture = ""; 
+ 	$scope.newPinWebsite = ""; 
+ 	$scope.newPinDescription = "";
+ 	$('#myModal').modal('hide')
+
 
   }
 
